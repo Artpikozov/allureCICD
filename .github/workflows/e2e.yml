@@ -4,9 +4,9 @@ on:
   push:
     branches:
       -main
-  worlflow_dispatch:
+  workflow_dispatch:
   #Описываем джобы которые запускаем когда "push в main)")
-  jobs:
+ jobs:
     e2e:
       runs-on: ubuntu-latest
       steps:
