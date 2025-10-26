@@ -2,7 +2,7 @@ import { expect } from "@playwright/test";
 import { test } from "../src/helpers/fixtures/index";
 
 let token;
-test.describe.only("Challenge", () => {
+test.describe("Challenge", () => {
   test.beforeAll(async ({ api }, testinfo) => {
     let r = await api.challenger.post(testinfo);
     const headers = r.headers();
