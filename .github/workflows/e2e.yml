@@ -24,6 +24,16 @@ jobs:  # ← этот элемент должен быть на том же ур
         run: npx playwright install --with-deps
       - name: Запуск тестов
         run: npx playwright test
+      - name: Запуск генерации в одном allure файле
+        run: npx allure awesome ./allure-results --single-file
+      #  сохраняю результаты
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+            name: allure-report
+            path: allure-report
+            retention-days: 30
 
 
 
