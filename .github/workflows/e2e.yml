@@ -25,7 +25,7 @@ jobs:  # ← этот элемент должен быть на том же ур
       - name: Запуск тестов
         run: npx playwright test
       - name: Запуск генерации в одном allure файле
-        run: npm run allureFile
+        run: npx allure awesome ./allure-results --single-file
         if: always()
         continue-on-error: true
       #  сохраняю результаты
